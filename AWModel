@@ -1,0 +1,43 @@
+Name: Diabetes
+CanonicalName: diabetes
+MLProject: training/model-code/MLProject
+Requirements: training/model-code/conda.yaml
+DependencyManagement: conda
+InferenceType: realtime
+Team:
+  - Name: Name
+    Email: email@email.com
+Tags:
+  Team: AI
+  Owner: Object Factory
+Development:
+  TrackingUri: http://52.53.233.89:5000
+  Training:
+    ResourceConfig:
+      InstanceType: ml.m4.xlarge
+      InstanceCount: 1
+    StoppingCondition:
+      MaxRuntimeInSeconds: 3000
+      MaxWaitTimeInSeconds: 3000
+    EnableManagedSpotTraining: true
+    Parameters:
+      dataset_path: file:///opt/ml/input/data/train
+      images_prefix: image
+    InputDataConfig:
+      - ChannelName: train
+        DataSource:
+          S3DataSource:
+            S3Uri: s3://twmotest-dev-artifacts/diabetes/twmotest-dev-test2-ci/
+            S3DataDistributionType: FullyReplicated
+            S3DataType: S3Prefix
+        CompressionType: None
+        InputMode: File
+    OutputDataConfig:
+      S3OutputPath: s3://twmotest-dev-artifacts/diabetes/twmotest-dev-test2-ci/
+  Inference:
+    Mode: replace
+    ResourceConfig:
+      InstanceType: ml.m4.xlarge
+      InstanceCount: 1
+    Environment:
+      GUNICORN_CMD_ARGS: --workers=1
