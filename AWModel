@@ -21,8 +21,8 @@ Development:
       MaxWaitTimeInSeconds: 3000
     EnableManagedSpotTraining: true
     Parameters:
-      dataset_path: file:///opt/ml/input/data/train
-      images_prefix: image
+      batch_size: 100
+      train_steps: 1000
     InputDataConfig:
       - ChannelName: train
         DataSource:
