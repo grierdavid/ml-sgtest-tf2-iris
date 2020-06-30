@@ -1,5 +1,5 @@
-Name: Diabetes
-CanonicalName: diabetes
+Name: Iris 
+CanonicalName: iris
 MLProject: training/model-code/MLProject
 Requirements: training/model-code/conda.yaml
 DependencyManagement: conda

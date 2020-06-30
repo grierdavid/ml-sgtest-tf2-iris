@@ -8,4 +8,4 @@ dependencies:
   - pip:
     - mlflow
     - tensorflow==2.0.0
-
+    - boto3
