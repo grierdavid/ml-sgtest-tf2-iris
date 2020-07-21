@@ -11,7 +11,7 @@ Tags:
   Team: AI
   Owner: Object Factory
 Development:
-  TrackingUri: http://52.53.233.89:5000
+  TrackingUri: http://dgmytest-dev-lb-b6dfbd030eab32f4.elb.us-west-1.amazonaws.com:5000
   Training:
     ResourceConfig:
       InstanceType: ml.m4.xlarge
@@ -27,13 +27,13 @@ Development:
       - ChannelName: train
         DataSource:
           S3DataSource:
-            S3Uri: s3://twmotest-dev-artifacts/diabetes/twmotest-dev-test2-ci/
+            S3Uri: s3://dgmytest-dev-artifacts/diabetes/dgmytest-dev-test2-ci/
             S3DataDistributionType: FullyReplicated
             S3DataType: S3Prefix
         CompressionType: None
         InputMode: File
     OutputDataConfig:
-      S3OutputPath: s3://twmotest-dev-artifacts/diabetes/twmotest-dev-test2-ci/
+      S3OutputPath: s3://dgmytest-dev-artifacts/diabetes/dgmytest-dev-test2-ci/
   Inference:
     Mode: replace
     ResourceConfig:
