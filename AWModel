@@ -27,13 +27,13 @@ Development:
       - ChannelName: train
         DataSource:
           S3DataSource:
-            S3Uri: s3://dgmytest-dev-artifacts/diabetes/dgmytest-dev-test2-ci/
+            S3Uri: s3://dgmytest-dev-artifacts/iris/dgmytest-dev-test2-ci/
             S3DataDistributionType: FullyReplicated
             S3DataType: S3Prefix
         CompressionType: None
         InputMode: File
     OutputDataConfig:
-      S3OutputPath: s3://dgmytest-dev-artifacts/diabetes/dgmytest-dev-test2-ci/
+      S3OutputPath: s3://dgmytest-dev-artifacts/iris/dgmytest-dev-test2-ci/
   Inference:
     Mode: replace
     ResourceConfig:
