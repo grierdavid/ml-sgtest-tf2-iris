@@ -2,7 +2,6 @@ Name: Iris
 CanonicalName: iris
 MLProject: training/model-code/MLProject
 Requirements: training/model-code/conda.yaml
-NotebookFile: training/model-code/train_predict_2.ipynb
 DependencyManagement: conda
 InferenceType: realtime
 Team:
