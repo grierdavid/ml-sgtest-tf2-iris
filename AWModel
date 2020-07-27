@@ -3,6 +3,7 @@ CanonicalName: iris
 MLProject: training/model-code/MLProject
 Requirements: training/model-code/conda.yaml
 DependencyManagement: conda
+NotebookFile: training/model-code/train_predict_2.ipynb
 InferenceType: realtime
 Team:
   - Name: Name
@@ -11,7 +12,7 @@ Tags:
   Team: AI
   Owner: Object Factory
 Development:
-  TrackingUri: http://dgmytest-dev-lb-b6dfbd030eab32f4.elb.us-west-1.amazonaws.com:5000
+  TrackingUri: {{ trackinrg_url }}
   Training:
     ResourceConfig:
       InstanceType: ml.m4.xlarge
@@ -27,13 +28,13 @@ Development:
       - ChannelName: train
         DataSource:
           S3DataSource:
-            S3Uri: s3://dgmytest-dev-artifacts/iris/dgmytest-dev-test2-ci/
+            S3Uri: {{ s3_uri }}
             S3DataDistributionType: FullyReplicated
             S3DataType: S3Prefix
         CompressionType: None
         InputMode: File
     OutputDataConfig:
-      S3OutputPath: s3://dgmytest-dev-artifacts/iris/dgmytest-dev-test2-ci/
+      S3OutputPath: {{ s3_uri }}
   Inference:
     Mode: replace
     ResourceConfig:
