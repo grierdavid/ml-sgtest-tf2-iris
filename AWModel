@@ -12,7 +12,7 @@ Tags:
   Team: AI
   Owner: Object Factory
 Development:
-  TrackingUri: {{ trackinrg_url }}
+  TrackingUri: https://git-codecommit.us-west-1.amazonaws.com/v1/repos/dgentest-dev-xgb-customer-churn:5000
   Training:
     ResourceConfig:
       InstanceType: ml.m4.xlarge
@@ -28,13 +28,13 @@ Development:
       - ChannelName: train
         DataSource:
           S3DataSource:
-            S3Uri: {{ s3_uri }}
+            S3Uri: s3://dgentest-dev-artifact-bucket/iris/dgentest-dev-iris-ci/
             S3DataDistributionType: FullyReplicated
             S3DataType: S3Prefix
         CompressionType: None
         InputMode: File
     OutputDataConfig:
-      S3OutputPath: {{ s3_uri }}
+      S3OutputPath: s3://dgentest-dev-artifact-bucket/iris/dgentest-dev-iris-ci/
   Inference:
     Mode: replace
     ResourceConfig:
