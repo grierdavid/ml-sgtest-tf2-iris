@@ -12,7 +12,7 @@ Tags:
   Team: AI
   Owner: Object Factory
 Development:
-  TrackingUri: https://git-codecommit.us-west-1.amazonaws.com/v1/repos/dgentest-dev-xgb-customer-churn:5000
+  TrackingUri: http://dgentest-dev-lb-1b24bc7bfeba548d.elb.us-west-1.amazonaws.com:5000
   Training:
     ResourceConfig:
       InstanceType: ml.m4.xlarge
