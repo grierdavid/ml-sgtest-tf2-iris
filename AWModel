@@ -11,7 +11,7 @@ Team:
 Tags:
   Team: AI
   Owner: Object Factory
-Stage:
+Staging:
   TrackingUri: http://dgentest-dev-lb-1b24bc7bfeba548d.elb.us-west-1.amazonaws.com:5000
   Training:
     ResourceConfig:
