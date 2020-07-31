@@ -28,13 +28,13 @@ Development:
       - ChannelName: train
         DataSource:
           S3DataSource:
-            S3Uri: s3://dgentest-dev-artifacts/iris/dgentest-dev-xgb-customer-churn-ci/
+            S3Uri: s3://dgentest-stage-artifacts/iris/dgentest-stage-xgb-customer-churn-ci/
             S3DataDistributionType: FullyReplicated
             S3DataType: S3Prefix
         CompressionType: None
         InputMode: File
     OutputDataConfig:
-      S3OutputPath: s3://dgentest-dev-artifacts/iris/dgentest-dev-xgb-customer-churn-ci/
+      S3OutputPath: s3://dgentest-stage-artifacts/iris/dgentest-stage-xgb-customer-churn-ci/
   Inference:
     Mode: replace
     ResourceConfig:
